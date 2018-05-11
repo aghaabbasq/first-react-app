@@ -1,37 +1,34 @@
 
 import React, { Component } from 'react';
-import './App.css';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      term: '',
-      img: ''
+      clicks: 0,
+      show: true
     };
   }
 
-  onChange = (event) => {
-    this.setState({ term: event.target.value });
+  IncrementItem = () => {
+    this.setState({ clicks: this.state.clicks + 1 });
   }
-  handleSubmit = (event) => {
-    event.preventDefault();
-    const api_key = 'dc6zaTOxFJmzC';
-    const url = `http://api.giphy.com/v1/gifs/search?q=${this.state.term}&api_key=${api_key}`;
-    fetch(url)
-      .then(response => response.json())
-      .then(data => this.setState({ term:'', img: data.data[0].images.fixed_height.url }))
-      .catch(e => console.log('error', e));
+  DecreaseItem = () => {
+    this.setState({ clicks: this.state.clicks - 1 });
+  }
+  ToggleClick = () => {
+    this.setState({ show: !this.state.show });
   }
 
   render() {
     return (
-      <div className="App">
-        <form onSubmit={this.handleSubmit}>
-          <input value={this.state.term} onChange={this.onChange} />
-          <button>Search!</button>
-        </form>
-        <img src={this.state.img} height="200" alt={this.state.term} />
+      <div>
+        <button onClick={this.IncrementItem}>Click to increment by 1</button>
+        <button onClick={this.DecreaseItem}>Click to decrease by 1</button>
+        <button onClick={this.ToggleClick}>
+          { this.state.show ? 'Hide number' : 'Show number' }
+        </button>
+        { this.state.show ? <h2>{ this.state.clicks }</h2> : '' }
       </div>
     );
   }

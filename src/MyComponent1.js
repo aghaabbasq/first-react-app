@@ -29,7 +29,7 @@ export default class App extends Component {
       <div>
         <form className="App" onSubmit={this.onSubmit}>
           <input value={this.state.term} onChange={this.onChange} />
-          <button>Submit</button>
+          <button>Add</button>
         </form>
         <List items={this.state.items} />
       </div>

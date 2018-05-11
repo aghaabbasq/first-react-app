@@ -21,14 +21,12 @@ class App extends Component {
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h2>Welcome to My first React</h2>
-          <MyComponent3 name="Thinkmillers 😃" />
+          <MyComponent3 name="" />
         </div>
         <p className="App-intro">
           
         </p>
-        <button onClick={this.toggle}>
-          {this.state.isOn ? 'On' : 'Off'}
-        </button>
+        
       </div>
     );
   }
