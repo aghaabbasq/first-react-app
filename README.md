@@ -1,6 +1,7 @@
 # MyComponent1
 ## To do List
 input your item and display
+
 <img src="public/images/1.png" width="600px"/>
 
 # MyComponent 2
