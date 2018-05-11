@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import MyComponent3 from './MyComponent3';
+import MyComponent1 from './MyComponent1';
 
 class App extends Component {
   constructor(props) {
@@ -21,7 +21,7 @@ class App extends Component {
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h2>Welcome to My first React</h2>
-          <MyComponent3 name="" />
+          <MyComponent1 name="" />
         </div>
         <p className="App-intro">
           
